@@ -41,3 +41,11 @@ The ONBUILD trigger makes sure that your artifactory.war is picked up and applie
 ```
 docker run -P yourname/myartifactory
 ```
+
+# Using Boot2Docker
+  ```
+  for i in {10000..10999}; do
+      VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port$i,tcp,,$i,,$i";
+      VBoxManage modifyvm "boot2docker-vm" --natpf1 "udp-port$i,udp,,$i,,$i";
+  done
+  ```
